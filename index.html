@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Boolzapp</title>
+    <!-- CSS Import -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Roboto Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+  </head>
+
+  <body>
+    <div class="container">
+      <div id="root">
+
+        <!-- Left Side  -->
+        <div id="left-side">
+          <!-- Nav section -->
+          <div class="navbar">
+            <div class="left-nav">
+              <div id="personal-data">
+                <div class="avatar">
+                  <img src="img/my-avatar.png" alt="My Avatar">
+                </div>
+                <div class="my-name"><h1>Adri Kolaj</h1></div>
+              </div>
+            </div>
+
+            <div class="right-nav">
+              <ul>
+                <li><i class="fas fa-circle-notch"></i></li>
+                <li><i class="fas fa-comment-alt"></i></li>
+                <li><i class="fas fa-ellipsis-v"></i></li>
+              </ul>
+            </div>
+          </div>
+          <!-- /Nav section -->
+          <!-- Notifications section -->
+          <div id="notifications">
+            <div class="avatar notifications-icon">
+              <i class="fas fa-bell-slash"></i>
+            </div>
+            <div class="contact-info">
+              <h4>Ricevi notifiche di nuovi messaggi</h4>
+              <span class="turn-on-notifications">Attiva notifiche desktop</span>
+            </div>
+          </div>
+          <!-- /Notifications section -->
+          <!-- Search chat section -->
+          <div id="search-chat">
+            <button type="button" name="button"><i class="fas fa-search"></i></button>
+            <input type="text" name="search" placeholder="Cerca o inizia una nuova chat">
+          </div>
+          <!-- /Search chat section -->
+        </div>
+        <!-- /Left Side -->
+
+        <!-- Right Side -->
+        <div id="right-side">
+          <div class="navbar">
+            <div class="left-nav">
+              <div id="chat-section">
+                <div class="avatar">
+                  <img src="img/my-avatar.png" alt="Avatar">
+                </div>
+                <div class="contact-info">
+                  <h3>Michele</h3>
+                  <span class="last-access">Ultimo accesso oggi alle...</span>
+                </div>
+              </div>
+            </div>
+            <div class="right-nav">
+              <ul>
+                <li><i class="fas fa-search"></i></li>
+                <li><i class="fas fa-paperclip"></i></li>
+                <li><i class="fas fa-ellipsis-v"></i></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- /Right Side -->
+
+      </div>
+    </div>
+  </body>
+</html>
