@@ -102,11 +102,18 @@ h5 {
   list-style: none;
 }
 .right-nav li {
-  margin: 10px;
+  margin: 0 5px;
 }
+
 .right-nav i {
+  padding: 0 5px;
   font-size: 20px;
   color: #B1B1B1;
+  transition: color 0.4s;
+}
+.right-nav i:hover {
+  cursor: pointer;
+  color: grey;
 }
 
 .last-access {
@@ -124,20 +131,26 @@ h5 {
   padding: 0 20px;
   background-color: #8EDAFB;
 }
+
 .notifications-icon {
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: #F2FBFF;
 }
+
 .notifications-icon i {
   color: #8EDAFB;
   font-size: 20px;
 }
+
 .turn-on-notifications {
   font-size: 13px;
   text-decoration: underline;
   color: grey;
+}
+.turn-on-notifications:hover {
+  cursor: pointer;
 }
 /* /Notification settings */
 
@@ -151,9 +164,16 @@ h5 {
 }
 
 #search-chat button {
-  border: none;
-  background-color: inherit;
+  font-size: 16px;
   padding: 5px 30px;
+  border: none;
+  color: darkgrey;
+  background-color: inherit;
+  transition: color 0.4s;
+}
+#search-chat button:hover {
+  cursor: pointer;
+  color: #8EDAFA;
 }
 
 #search-chat input {
@@ -183,6 +203,17 @@ h5 {
   width: 100%;
   height: 70px;
   padding: 12px 5px 12px 12px;
+  background-color: white;
+  transition: background-color 0.4s;
+}
+.contact:not(:last-child) {
+  border-bottom: 1px solid #F2FBFE;
+}
+.contact:hover {
+  cursor: pointer;
+  background-color: #FAFAFA;
+}
+.contact.active {
   background-color: #E8EBEB;
 }
 
@@ -193,12 +224,48 @@ h5 {
 /* /Contacts settings */
 
 /* Chat settings */
-#chat {
+#mex-section {
   width: 100%;
   /* height calc - navbar - write-message */
   height: calc(100% - 70px - 65px);
+  padding: 40px 90px;
   background-image: url("../img/background.jpeg");
   overflow-y: scroll;
+}
+/* ClearFix */
+#mex-section::after {
+  content: "";
+  clear: both;
+}
+
+.message {
+  position: relative;
+  width: 320px;
+  margin-bottom: 10px;
+  padding: 15px;
+  border-radius: 10px;
+  background-color: white;
+  clear: both;
+}
+
+.sent {
+  float: right;
+  display: block;
+  background-color: #D5F9BA;
+}
+.received {
+  float: left;
+}
+
+.message-txt {
+  font-size: 14px;
+  padding-bottom: 5px;
+}
+
+.corner-bottomright {
+  position: absolute;
+  bottom: 4px;
+  right: 7px;
 }
 /* /Chat settings */
 
@@ -225,6 +292,13 @@ h5 {
 #write-message button i {
   font-size: 22px;
   color: #6B7376;
+  transition: color 0.4s;
+}
+#write-message button .fas:hover {
+  color: red;
+}
+#write-message button .far:hover {
+  color: #FFD000;
 }
 
 #write-message input {
