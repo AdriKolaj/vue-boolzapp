@@ -24,7 +24,7 @@
 #left-side {
   width: 35%;
   height: 100%;
-  border-right: 1px solid #B1B1B1;
+  border-right: 1px solid lightgrey;
   overflow: hidden;
 }
 
@@ -63,7 +63,7 @@ h5 {
 
 .message-date {
   color: darkgrey;
-  font-size: 12px;
+  font-size: 11px;
   margin-left: auto;
 }
 /* /General settings */

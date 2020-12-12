@@ -9,6 +9,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+    <!-- VueJS -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
   </head>
 
   <body>
@@ -56,25 +58,13 @@
           <!-- /Search chat section -->
           <!-- Contacts section -->
           <div id="contacts-section">
-            <div class="contact active">
+            <div v-for="(contact, index) in contacts" class="contact active">
               <div class="avatar">
-                <img src="img/my-avatar.png" alt="Avatar">
+                <img :src="'img/avatar' + contact.avatar + '.png'" alt="Avatar">
               </div>
               <div class="contact-info">
-                <h4>Michele</h4>
-                <span class="message-preview">Prova messaggio! ....</span>
-              </div>
-              <div class="message-date">
-                data e ora
-              </div>
-            </div>
-            <div class="contact">
-              <div class="avatar">
-                <img src="img/my-avatar.png" alt="Avatar">
-              </div>
-              <div class="contact-info">
-                <h4>Michele</h4>
-                <span class="message-preview">Prova messaggio! ....</span>
+                <h4>{{contact.name}}</h4>
+                  <span class="message-preview">Prova messaggio! ....</span>
               </div>
               <div class="message-date">
                 data e ora
@@ -92,10 +82,10 @@
             <div class="left-nav">
               <div id="chat-section">
                 <div class="avatar">
-                  <img src="img/my-avatar.png" alt="Avatar">
+                  <img :src="'img/avatar' + contacts[0].avatar + '.png'" alt="Avatar">
                 </div>
                 <div class="contact-info">
-                  <h3>Michele</h3>
+                  <h3>{{contacts[0].name}}</h3>
                   <span class="last-access">Ultimo accesso oggi alle...</span>
                 </div>
               </div>
@@ -111,28 +101,12 @@
           <!-- /Nav section -->
           <!-- Chat section -->
           <div id="mex-section">
-            <div class="message sent">
+            <div v-for="message in contacts[0].messages" class = "message" :class = "message.status">
               <div class="message-txt">
-                Hai portato a spasso il cane?
+                {{message.text}}
               </div>
               <div class="message-date corner-bottomright">
-                data e ora
-              </div>
-            </div>
-            <div class="message sent">
-              <div class="message-txt">
-                Ricordati di dargli da mangiare
-              </div>
-              <div class="message-date corner-bottomright">
-                data e ora
-              </div>
-            </div>
-            <div class="message received">
-              <div class="message-txt">
-                Tutto fatto!
-              </div>
-              <div class="message-date corner-bottomright">
-                data e ora
+                {{message.date}}
               </div>
             </div>
           </div>
@@ -149,5 +123,6 @@
 
       </div>
     </div>
+    <script src="js/main.js" charset="utf-8"></script>
   </body>
 </html>
