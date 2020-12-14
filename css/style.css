@@ -63,7 +63,7 @@ h5 {
 
 .message-date {
   color: darkgrey;
-  font-size: 11px;
+  font-size: 10.5px;
   margin-left: auto;
 }
 /* /General settings */
@@ -259,7 +259,7 @@ h5 {
 
 .message-txt {
   font-size: 14px;
-  padding-bottom: 5px;
+  padding-bottom: 6px;
 }
 
 .corner-bottomright {

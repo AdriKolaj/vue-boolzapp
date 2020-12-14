@@ -88,6 +88,14 @@ var root = new Vue({
     		],
     	},
     ],
+    chatIndex: 0,
+
 
   },
+
+  methods: {
+    openChat: function(index) {
+      this.chatIndex = index;
+    }
+  }
 });

@@ -58,7 +58,7 @@
           <!-- /Search chat section -->
           <!-- Contacts section -->
           <div id="contacts-section">
-            <div v-for="(contact, index) in contacts" class="contact active">
+            <div v-for="(contact, index) in contacts" class="contact" :class="{active: index == chatIndex}" @click="openChat(index)">
               <div class="avatar">
                 <img :src="'img/avatar' + contact.avatar + '.png'" alt="Avatar">
               </div>
@@ -82,10 +82,10 @@
             <div class="left-nav">
               <div id="chat-section">
                 <div class="avatar">
-                  <img :src="'img/avatar' + contacts[0].avatar + '.png'" alt="Avatar">
+                  <img :src="'img/avatar' + contacts[chatIndex].avatar + '.png'" alt="Avatar">
                 </div>
                 <div class="contact-info">
-                  <h3>{{contacts[0].name}}</h3>
+                  <h3>{{contacts[chatIndex].name}}</h3>
                   <span class="last-access">Ultimo accesso oggi alle...</span>
                 </div>
               </div>
@@ -101,7 +101,7 @@
           <!-- /Nav section -->
           <!-- Chat section -->
           <div id="mex-section">
-            <div v-for="message in contacts[0].messages" class = "message" :class = "message.status">
+            <div v-for="message in contacts[chatIndex].messages" class = "message" :class = "message.status">
               <div class="message-txt">
                 {{message.text}}
               </div>
