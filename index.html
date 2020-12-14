@@ -114,7 +114,7 @@
           <!-- Write message section -->
           <div id="write-message">
             <button type="button" name="smiles"><i class="far fa-smile"></i></button>
-            <input type="text" placeholder="Scrivi un messaggio">
+            <input type="text" placeholder="Scrivi un messaggio" v-model="newTxt" v-on:keyup.enter="sendMessage">
             <button type="button" name="rec"><i class="fas fa-microphone"></i></button>
           </div>
           <!-- /Write message section -->

@@ -3,6 +3,7 @@ var root = new Vue({
   el: "#root",
 
   data: {
+
     contacts: [
     	{
     		name: 'Michele',
@@ -84,18 +85,31 @@ var root = new Vue({
     				date: '10/01/2020 15:50:00',
     				text: 'Si, ma preferirei andare al cinema',
     				status: 'received'
-    			}
+    			},
     		],
     	},
     ],
     chatIndex: 0,
-
+    newTxt: "",
 
   },
 
   methods: {
+
     openChat: function(index) {
       this.chatIndex = index;
-    }
-  }
+    },
+
+    sendMessage: function() {
+      let sendNewMessage = {
+        date: "nuova data e ora",
+        text: this.newTxt,
+        status: "sent"
+      }
+      this.contacts[this.chatIndex].messages.push(sendNewMessage);
+      this.newTxt = "";
+    },
+
+  },
+
 });
