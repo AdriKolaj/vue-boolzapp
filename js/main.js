@@ -91,8 +91,10 @@ var root = new Vue({
     ],
     chatIndex: 0,
     newTxt: "",
+    date: new Date().toLocaleDateString(),
 
   },
+  
 
   methods: {
 
@@ -102,12 +104,25 @@ var root = new Vue({
 
     sendMessage: function() {
       let sendNewMessage = {
-        date: "nuova data e ora",
+        date: this.date + " " + new Date().toLocaleTimeString(),
         text: this.newTxt,
         status: "sent"
       }
       this.contacts[this.chatIndex].messages.push(sendNewMessage);
       this.newTxt = "";
+      setTimeout(() =>  {
+        this.receiveMessage();
+      }, 1000);
+
+    },
+
+    receiveMessage: function() {
+      let receiveNewMessage = {
+        date: this.date + " " + new Date().toLocaleTimeString(),
+        text: "Ok",
+        status: "received"
+      }
+      this.contacts[this.chatIndex].messages.push(receiveNewMessage);
     },
 
   },
