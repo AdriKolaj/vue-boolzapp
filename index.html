@@ -64,10 +64,10 @@
               </div>
               <div class="contact-info">
                 <h4>{{contact.name}}</h4>
-                  <span class="message-preview">Prova messaggio! ....</span>
+                <span class="message-preview">{{contact.messages[contact.messages.length -1].text}}</span>
               </div>
               <div class="message-date">
-                data e ora
+              {{contact.messages[contact.messages.length -1].date}}
               </div>
             </div>
           </div>
@@ -86,7 +86,7 @@
                 </div>
                 <div class="contact-info">
                   <h3>{{contacts[chatIndex].name}}</h3>
-                  <span class="last-access">Ultimo accesso oggi alle {{date}}</span>
+                  <span class="last-access">Ultimo accesso oggi alle {{contacts[chatIndex].messages[contacts[chatIndex].messages.length -1].date}}</span>
                 </div>
               </div>
             </div>

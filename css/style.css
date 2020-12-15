@@ -220,6 +220,11 @@ h5 {
 }
 
 .message-preview {
+  display: inline-block;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 200px;
   font-size: 13px;
   color: darkgrey;
 }
