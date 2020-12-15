@@ -19,6 +19,7 @@
   height: 95%;
   margin: auto;
   background-color: white;
+  box-shadow: 0px 0px 1px 1px #D1D1D1;
 }
 
 #left-side {
@@ -65,6 +66,7 @@ h5 {
   color: darkgrey;
   font-size: 10.5px;
   margin-left: auto;
+  margin-right: 5px;
 }
 /* /General settings */
 
@@ -189,11 +191,11 @@ h5 {
 /* /Search chat settings */
 
 /* Contacts settings */
-#contacts-section {
+.contacts-section {
   /* height calc - navbar - notifications - search-chat */
   height: calc(100% - 70px - 80px - 45px);
   width: 100%;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 .contact {
@@ -230,7 +232,7 @@ h5 {
   height: calc(100% - 70px - 65px);
   padding: 40px 90px;
   background-image: url("../img/background.jpeg");
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 /* ClearFix */
 #mex-section::after {

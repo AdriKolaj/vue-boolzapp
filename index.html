@@ -53,12 +53,12 @@
           <!-- Search chat section -->
           <div id="search-chat">
             <button type="button" name="button"><i class="fas fa-search"></i></button>
-            <input type="text" name="search" placeholder="Cerca o inizia una nuova chat">
+            <input type="text" name="search" placeholder="Cerca o inizia una nuova chat"  v-model="search">
           </div>
           <!-- /Search chat section -->
           <!-- Contacts section -->
-          <div id="contacts-section">
-            <div v-for="(contact, index) in contacts" class="contact" :class="{active: index == chatIndex}" @click="openChat(index)">
+          <div class="contacts-section">
+            <div v-for="(contact, index) in filterBySearch" class="contact" :class="{active: index == chatIndex}" @click="openChat(index)">
               <div class="avatar">
                 <img :src="'img/avatar' + contact.avatar + '.png'" alt="Avatar">
               </div>
@@ -86,7 +86,7 @@
                 </div>
                 <div class="contact-info">
                   <h3>{{contacts[chatIndex].name}}</h3>
-                  <span class="last-access">Ultimo accesso oggi alle...</span>
+                  <span class="last-access">Ultimo accesso oggi alle {{date}}</span>
                 </div>
               </div>
             </div>

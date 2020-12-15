@@ -92,9 +92,16 @@ var root = new Vue({
     chatIndex: 0,
     newTxt: "",
     date: new Date().toLocaleDateString(),
-
+    search: "",
   },
-  
+
+  computed: {
+    filterBySearch() {
+      return this.contacts.filter(contact => {
+        return contact.name.toLowerCase().includes(this.search.toLowerCase());
+      });
+    }
+  },
 
   methods: {
 
